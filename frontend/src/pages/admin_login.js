@@ -16,7 +16,7 @@ const ALogin = () => {
   const onFinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("/admin_route/login", values);
+      const res = await axios.post("http://localhost:5000/admin_route/login", values);
       //by below function brwser reload we are using this bcz the data requires to be reloaded to be updated
       // window.location.reload();
       dispatch(hideLoading());

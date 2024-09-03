@@ -24,7 +24,7 @@ const CreateEntry = () => {
         // console.log(params.id)
         try {
             const res = await axios.post(
-                "/employee_route/getEmployeeById", 
+                "http://localhost:5000/employee_route/getEmployeeById", 
                 { eid: params.id },
                 {
                 headers: {
@@ -53,7 +53,7 @@ const CreateEntry = () => {
         try {
           dispatch(showLoading());
           const res = await axios.post(
-            "/employee_route/AddEntry",
+            "http://localhost:5000/employee_route/AddEntry",
             {
               ...values,
               emp_id: employee._id,

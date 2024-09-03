@@ -28,7 +28,7 @@ const UpdateEntry = () => {
     useEffect(() => {
         const fetchEntries = async () => {
           try {
-            const response = await axios.get("../admin_route/getAllEntry"); // Replace with your API endpoint to fetch entries
+            const response = await axios.get("http://localhost:5000/admin_route/getAllEntry"); // Replace with your API endpoint to fetch entries
             setEntries(response.data.data);
           } catch (error) {
             console.log(error);
@@ -42,7 +42,7 @@ const UpdateEntry = () => {
         const fetchEmployeeNames = async () => {
           try {
             const entryPromises = entries.map(async (entry) => {
-              const employeeResponse = await axios.get(`/admin_route/getEmployeeById/${entry.emp_id}`);
+              const employeeResponse = await axios.get(`http://localhost:5000/admin_route/getEmployeeById/${entry.emp_id}`);
               const employee = employeeResponse.data.data; // Assuming the employee object is returned in response.data.data
     
               setEmployeeNames((prevNames) => ({
@@ -69,7 +69,7 @@ const UpdateEntry = () => {
     const handleUpdateEntry = async () => {
         try {
           const updatedEntry = { ...selectedEntry, status, upd_remarks: remarks };
-          await axios.put(`/admin_route/update_status/${selectedEntry._id}`, updatedEntry); // Replace with your API endpoint to update entry
+          await axios.put(`http://localhost:5000/admin_route/update_status/${selectedEntry._id}`, updatedEntry); // Replace with your API endpoint to update entry
           // Optional: Show success message or perform additional actions
           window.location.reload();
         } catch (error) {

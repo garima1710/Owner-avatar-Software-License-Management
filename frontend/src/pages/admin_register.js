@@ -17,7 +17,7 @@ const ARegister = () => {
     const onFinishHandler = async(values)=>{
       try {
         dispatch(showLoading());
-        const res = await axios.post("/admin_route/register",values);
+        const res = await axios.post("http://localhost:5000/admin_route/register",values);
         dispatch(hideLoading());
   
         if(res.data.success){

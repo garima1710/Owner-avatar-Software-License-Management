@@ -15,7 +15,7 @@ export default function AProtectedRoutes({children}){
     const getadmin = async()=>{
         try {
              dispatch(showLoading()) 
-             const res = await axios.post("/admin_route/getAdminById",{
+             const res = await axios.post("http://localhost:5000/admin_route/getAdminById",{
                 token : localStorage.getItem('token')},
                 {
                     headers: {

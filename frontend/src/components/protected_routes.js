@@ -15,7 +15,7 @@ export default function ProtectedRoutes({children}){
     const getemployee = async()=>{
         try {
              dispatch(showLoading()) 
-             const res = await axios.post("/employee_route/getEmployeeById",{
+             const res = await axios.post("http://localhost:5000/employee_route/getEmployeeById",{
                 token : localStorage.getItem('token')},
                 {
                     headers: {

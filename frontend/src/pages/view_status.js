@@ -21,7 +21,7 @@ const ViewS = () => {
         console.log("params.id : ",params.id)
         try {
             const res = await axios.post(
-                "/employee_route/getEmployeeById", 
+                "http://localhost:5000/employee_route/getEmployeeById", 
                 { eid: params.id },
                 {
                 headers: {
@@ -72,7 +72,7 @@ const ViewS = () => {
         const fetchEntries = async () => {
           try {
             const response = await axios.post(
-              "/employee_route/GetAllEntryById",
+              "http://localhost:5000/employee_route/GetAllEntryById",
               {
                 eid: params.id,
               },
